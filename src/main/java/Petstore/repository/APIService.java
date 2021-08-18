@@ -10,6 +10,7 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public interface APIService {
     @Multipart
     @POST("pet/{petId}/uploadImage")
     Call<ApiResponse> uploadAnimalImage(@Path("petId") long petId,
-                                        @Part("description") RequestBody description,
+                                        @Part("additionalMetadata") RequestBody description,
                                         @Part MultipartBody.Part filePart);
 
     @POST("pet")
@@ -46,7 +47,7 @@ public interface APIService {
 
     //store
     @GET("store/inventory")
-    Call<Object> getPetInventories();
+    Call<HashMap<String, String>> getPetInventories();
 
     @POST("store/order")
     Call<Order> createAnOrder(@Body Order order);

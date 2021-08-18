@@ -7,6 +7,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 
 public class PetStoreManager {
@@ -22,7 +23,7 @@ public class PetStoreManager {
 
         File file = new File(imageUrl);
         RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), file);
-        MultipartBody.Part filePart = MultipartBody.Part.createFormData("new file", file.getName(), requestBody);
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
         RequestBody description = RequestBody.create(MediaType.parse("text/plane"), "dog");
 
         return RetrofitBuilder.responseHandler(API_SERVICE.uploadAnimalImage(animalId, description, filePart));
@@ -53,7 +54,7 @@ public class PetStoreManager {
     }
 
     //Store
-    public Object getPetInventories() {
+    public HashMap<String, String> getPetInventories() {
         return RetrofitBuilder.responseHandler(API_SERVICE.getPetInventories());
     }
 
