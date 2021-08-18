@@ -240,7 +240,7 @@ public class UserInterface {
 
                     System.out.println("Укажите путь к изображеию\n");
                     String imageUrl = SCANNER.next();
-                    System.out.println(MANAGER.uploadAnimalImage(animalId1, "dog.jpg"));
+                    System.out.println(MANAGER.uploadAnimalImage(animalId1, imageUrl));
                     break;
                 case "3":
                     System.out.println("Укажите ID животного\n");

@@ -4,15 +4,13 @@ import Petstore.model.Animal;
 import Petstore.model.ApiResponse;
 import Petstore.model.Order;
 import Petstore.model.User;
-import jdk.jfr.MetadataDefinition;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.*;
-
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 public interface APIService {
 
